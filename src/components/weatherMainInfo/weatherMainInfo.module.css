@@ -1,0 +1,52 @@
+.mainInfo {
+  background-color: #f4f4f4; /* Color de fondo ligeramente gris */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+.city {
+  font-size: 32px; /* Tamaño de fuente aumentado */
+  font-weight: bold;
+  text-align: center;
+}
+
+.country {
+  font-size: 22px; /* Tamaño de fuente aumentado */
+  text-align: center;
+  color: #555; /* Color de texto más oscuro para contraste */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.condition {
+  font-size: 24px; /* Tamaño de fuente aumentado */
+  font-weight: bold; /* Texto en negrita */
+  color: #3498db; /* Color azul para resaltar la condición */
+}
+
+.current {
+  font-size: 40px; /* Tamaño de fuente aumentado */
+  font-weight: bold;
+  color: #e74c3c; /* Color rojo para resaltar la temperatura actual */
+}
+
+.weatherConditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  margin-top: 20px;
+  border-radius: 10px; /* Bordes redondeados para el mapa */
+  box-shadow: 0 4px 6px rgba(13, 12, 12, 0.1); /* Sombra para el mapa */
+}
