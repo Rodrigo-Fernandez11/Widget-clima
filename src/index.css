@@ -1,16 +1,6 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #141114;
+  background-color: #1b1e1e;
 
-}
-
-/* Estilicé el código dentro de las etiquetas <code> */
-code {
-  font-family: "Courier New", monospace;
-  background-color: #282828; /* Añadí un fondo oscuro al código para resaltarlo */
-  color: #FFD700; /* Cambié el color del texto a amarillo para mayor contraste */
-  padding: 5px 10px; /* Espaciado interno para mejorar la apariencia */
-  border-radius: 5px; /* Bordes redondeados para resaltar el código */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sutil sombra para resaltar */
 }
