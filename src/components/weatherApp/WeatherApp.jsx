@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Loading } from "../Loading/Loading";
+import { LoadingIcon } from "../Loading/LoadingIcon";
 import { WeatherForm } from "../weatherForm/WeatherForm";
 import { WeatherMainInfo } from "../weatherMainInfo/weatherMainInfo";
 import styles from "./weatherApp.module.css";
@@ -56,7 +56,7 @@ export function WeatherApp() {
     <div className={styles.weatherContainer}>
       <WeatherForm onChangeCity={handleOnChangeCity} />
       {/* Muestra el componente WeatherMainInfo si hay datos de pronóstico, de lo contrario, muestra el componente Loading */}
-      {weather ? <WeatherMainInfo weather={weather} /> : <Loading />}
+      {weather ? <WeatherMainInfo weather={weather} /> : <LoadingIcon />}
     </div>
   );
 }

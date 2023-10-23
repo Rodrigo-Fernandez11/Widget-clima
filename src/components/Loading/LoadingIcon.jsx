@@ -1,6 +1,6 @@
 import styles from "./loading.module.css";
 
-export function Loading() {
+export function LoadingIcon() {
   return (
     <div className={styles.loadingContainer}>
       <div className={styles.loader}>
