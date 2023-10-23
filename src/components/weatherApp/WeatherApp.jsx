@@ -8,9 +8,8 @@ import styles from "./weatherApp.module.css";
  * Componente principal de la aplicación de pronóstico del tiempo.
  */
 export function WeatherApp() {
-  // Clave de la API y URL de la API del pronóstico del tiempo
-  const REACT_APP_KEY = "d831263e36b04493866183554231210";
-  const REACT_APP_URL = "http://api.weatherapi.com/v1/current.json";
+  // Variables de entorno
+  const { VITE_REACT_APP_KEY, VITE_REACT_APP_URL } = import.meta.env;
 
   // Estado local para almacenar los datos del pronóstico del tiempo
   const [weather, setWeather] = useState(null);
@@ -22,7 +21,7 @@ export function WeatherApp() {
 
   // Efecto que actualiza el título de la página cuando cambian los datos del pronóstico del tiempo
   useEffect(() => {
-    document.title = "Weather | " + (weather?.location?.name || "");
+    document.title = `Weather | ${weather?.location?.name || ""}`;
   }, [weather]);
 
   /**
@@ -30,18 +29,18 @@ export function WeatherApp() {
    */
   async function loadInfo(city = "London") {
     try {
-      const request = await fetch(
-        `${REACT_APP_URL}?key=${REACT_APP_KEY}&q=${city}&aqi=no`
-      );
+      const request = await fetch(`${VITE_REACT_APP_URL}?key=${VITE_REACT_APP_KEY}&q=${city}&aqi=no`);
+      if (!request.ok) {
+        throw new Error(`Error al cargar los datos del pronóstico del tiempo para ${city}`);
+      }
       const json = await request.json();
-      console.log(json);
 
       // Simula una carga de 2 segundos antes de actualizar el estado con los datos del pronóstico
       setTimeout(() => {
         setWeather({ ...json });
       }, 2000);
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     }
   }
 
